@@ -19,6 +19,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 
+
+gem 'minitest', '~> 4.7.5'
+gem 'json', '~>1.8.1'
+gem 'therubyracer'
+
 group :doc do
   gem 'sdoc', require: false
 end
