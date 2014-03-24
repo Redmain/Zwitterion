@@ -1,0 +1,13 @@
+%center{:style=>'color:Green'}
+  %h1
+    WelcomeToZwitterion
+  %p
+    Привет, Оксана)))
+%h1
+  %br
+
+%h2
+  = button_to 'Регитсрация', new_user_registration_path, :method => 'get'
+%h3
+  = button_to 'Войти', new_user_session_path, :method => 'get'
+  = button_to 'Выйти', cancel_user_registration_path, :method => 'destroy'
