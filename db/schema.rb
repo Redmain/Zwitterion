@@ -11,28 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324154313) do
+ActiveRecord::Schema.define(version: 20140324154314) do
 
   create_table "answers", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "id_question"
     t.string   "text"
+    t.integer  "question_id"
   end
 
   create_table "marks", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "id_user"
-    t.integer  "id_test"
-    t.integer  "points",     default: 0
+    t.integer  "points",       default: 0
+    t.integer  "user_id"
+    t.integer  "test_list_id"
   end
 
   create_table "questions", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "id_test"
     t.string   "text"
+    t.integer  "test_id"
   end
 
   create_table "test_lists", force: true do |t|

@@ -17,6 +17,25 @@ gem 'devise'
 gem 'devise-i18n-views'
 gem 'devise-encryptable'
 
+group :development, :test do
+	gem 'pry-rails'
+	gem 'pry'
+	gem 'pry-nav'
+	gem 'pry-remote'
+	gem 'factory_girl_rails'
+	gem 'faker', '~> 1.2.0'
+end
+
+group :test do
+	gem 'rspec-rails'
+	gem 'spork'
+	gem 'database_cleaner', '1.0.0.RC1'
+	gem 'shoulda-matchers'
+	gem 'webmock'
+end
+
+
+
 group :doc do
   gem 'sdoc', require: false
 end
