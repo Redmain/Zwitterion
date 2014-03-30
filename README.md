@@ -9,8 +9,8 @@
 Добавляю ветку Redmain
 
 
-Настройка database.yml
-default: &default
+Настройка database.yml<br>
+<pre>default: &default
   adapter: mysql2
   database: zw_dev
   encoding: utf8
@@ -25,7 +25,7 @@ test:
 production:
   <<: *default
   database: zw_prod
-
+  
 development:
   <<: *default
   pool: 8
