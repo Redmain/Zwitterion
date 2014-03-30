@@ -18,4 +18,3 @@ vendor/bundle
 ckeditor_assets
 apps/*/data/orders/*
 apps/*/public/sitemap*
-test/
