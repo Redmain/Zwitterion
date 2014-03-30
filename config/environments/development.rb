@@ -28,4 +28,9 @@ Zwitterion::Application.configure do
   config.assets.debug = false
   config.action_mailer.default_url_options = { host: 'localhost:3000'}
   #config.assets.initialize_on_precompile = false
+  require "pry"
+    silence_warnings do
+        require 'pry'
+          IRB = Pry
+    end
 end
