@@ -12,10 +12,13 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'minitest', '~> 4.7.5'
 gem 'json', '~>1.8.1'
-gem 'therubyracer'
 gem 'devise'
 gem 'devise-i18n-views'
 gem 'devise-encryptable'
+
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :development, :test do
 	gem 'pry-rails'
