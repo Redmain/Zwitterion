@@ -5,9 +5,12 @@
     Привет, Оксана)))
 %h1
   %br
-
-%h2
-  = button_to 'Регитсрация', new_user_registration_path, :method => 'get'
-%h3
-  = button_to 'Войти', new_user_session_path, :method => 'get'
-  = button_to 'Выйти', destroy_user_session_path, :method => 'delete'
+-if user_signed_in?
+  %h3
+    = button_to 'Выйти', destroy_user_session_path, :method => 'delete'
+    = button_to 'Редактироать профиль', edit_user_registration_path, :method => 'get'
+-else 
+  %h2
+    = button_to 'Регитсрация', new_user_registration_path, :method => 'get'
+  %h3
+    = button_to 'Войти', new_user_session_path, :method => 'get'
