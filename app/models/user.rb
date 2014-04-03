@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   after_create :update_state
 
   def update_state
-		self.update_attributes(:state => 'approved')
+    self.update_attributes(:state => 'approved')
   end
 end
