@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true, length: {minimum: 2}
   validates :login, presence: true, uniqueness: true, length: {minimum: 2}
   scope :approved, -> {where(state: :approved)}
-  before_update :update_state
+  after_create :update_state
 
   def update_state
-		self.state = 'approved'
+		self.update_attributes(:state => 'approved')
   end
 end
