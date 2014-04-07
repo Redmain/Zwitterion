@@ -1,5 +1,4 @@
 require 'rubygems'
-module ActiveModel; module Observing; end; end # Prevents spork from exiting due to non-existent class in rails4.
 require 'spork'
 
 Spork.prefork do
