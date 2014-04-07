@@ -15,6 +15,8 @@ gem 'json', '~>1.8.1'
 gem 'devise'
 gem 'devise-i18n-views'
 gem 'devise-encryptable'
+gem 'cancancan', '~> 1.7'
+gem 'simple_form'
 
 gem 'therubyracer'
 gem 'less-rails'
