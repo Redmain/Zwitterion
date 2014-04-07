@@ -22,3 +22,19 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<title>
+  <script>
+  $(document).ready(function () {
+  $('#new_user').validate({
+  debug: true,
+  rules: {
+  'user[name]': {required: true, minlength: 2},
+  'user[login]': {required: true, minlength: 2},
+  'user[email]': {required: true, email: true},
+  'user[password]': {required: true, minlength: 7},
+  'user[password_confirmation]': {required: true, equalTo: '#user_password'}
+  }
+  });
+  });
+  </script>
+</title>

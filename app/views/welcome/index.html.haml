@@ -8,11 +8,17 @@
 -if user_signed_in?
   %h3
     = link_to 'Выйти', destroy_user_session_path, :method => 'delete'
-    = link_to 'Редактироать профиль', edit_user_registration_path, :method => 'get'
+    %br
+    = link_to 'Редактироать профиль', edit_user_registration_path, :method => 'get', class: :'btn btn-success'
+    %br
+    = link_to 'Список юзеров', users_path, :method => 'get'
+    
 -else 
   %h2
-    = link_to 'Регитсрация', new_user_registration_path, :method => 'get'
+    = link_to 'Регистрация', new_user_registration_path, :method => 'get'
+    %br
   %h3
     = link_to 'Войти', new_user_session_path, :method => 'get'
+    %br
 
-= link_to 'Список юзеров', users_path, :method => 'get'
+= link_to 'Список вопросов', questions_path, :method => 'get'

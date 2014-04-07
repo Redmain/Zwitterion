@@ -1,6 +1,6 @@
 Zwitterion::Application.routes.draw do
-  devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
-  get "welcome/index"
+  devise_for :users
+  #get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,6 +8,7 @@ Zwitterion::Application.routes.draw do
    #root 'welcome#index'
    root to: "welcome#index"
    resources :users, only: [:index]
+   resources :questions
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
