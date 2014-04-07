@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   load_and_authorize_resource param_method: :question_params
 
   def index
-    @question = Question.includes(:owner)
+    @questions = Question.includes(:owner)
   end
 
   def show
