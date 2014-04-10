@@ -17,6 +17,9 @@ gem 'devise-i18n-views'
 gem 'devise-encryptable'
 gem 'cancancan', '~> 1.7'
 gem 'simple_form'
+group :production do
+  gem 'pg'
+end
 
 gem 'therubyracer'
 gem 'less-rails'
