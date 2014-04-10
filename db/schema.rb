@@ -16,24 +16,24 @@ ActiveRecord::Schema.define(version: 20140324154323) do
   create_table "answers", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "text"
     t.integer  "question_id"
+    t.string   "text"
   end
 
   create_table "marks", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "points",       default: 0
     t.integer  "user_id"
     t.integer  "test_list_id"
+    t.integer  "points",       default: 0
   end
 
   create_table "questions", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "test_list_id"
     t.string   "text"
     t.integer  "owner_id"
-    t.integer  "test_list_id"
   end
 
   create_table "test_lists", force: true do |t|
