@@ -1,6 +1,5 @@
 .bundle
 log
-Gemfile.lock
 data
 tmp/
 system
