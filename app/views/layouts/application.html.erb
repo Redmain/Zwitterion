@@ -47,7 +47,9 @@
       <strong>
         Панель пользователя
       </strong>
-      <%= link_to 'Выйти', destroy_user_session_path, :method => 'delete' %>
+      
+      <%= link_to 'Редактироать профиль', edit_user_registration_path, :method => 'get', class: :'btn btn-success' %>
+      <%= link_to 'Выйти', destroy_user_session_path, :method => 'delete', class: :'btn btn-danger' %>
     </div>
   </div>
 </div>
