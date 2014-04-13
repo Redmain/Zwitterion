@@ -8,11 +8,14 @@
     - @questions.each do |q|
       %tr
         %td= link_to q.text, questions_path(q)
-        %td= q.owner.email
+        %td= q.owner.login
         %td
           - if can? :update, q
             = link_to 'Edit', edit_question_path(q)
             |
           - if can? :destroy, q
             = link_to 'delete', question_path(q), method: :delete, data: { confirm: 'sure?' }
-= link_to 'New', new_question_path
+
+= link_to 'New', new_question_path, class: :'btn btn-success'
+= link_to 'Список тестов', test_lists_path, class: :'btn btn-info'
+= link_to 'Назад', root_path, class: :'btn btn-success'

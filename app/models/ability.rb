@@ -4,6 +4,8 @@ class Ability
   def initialize(user)
     can [:read, :create], Question
     can [:update, :destroy], Question, owner: user
+    can [:read, :create], TestList
+    can [:update, :destroy], TestList, owner: user
   end
   #def initialize(user) #подсказки никогда не бывают лишними =)
     # Define abilities for the passed in user here. For example:
