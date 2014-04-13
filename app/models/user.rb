@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   after_create :update_state
 
   has_many :questions, foreign_key: :owner_id
+  has_many :test_lists, foreign_key: :owner_id
 
   def update_state
     self.update_attributes(:state => 'approved')
