@@ -6,8 +6,8 @@ class QuestionsController < ApplicationController
     @questions = Question.includes(:owner)
   end
 
-  def show
-  end
+  #def show
+  #end
 
   def new
     @question = Question.new
@@ -39,8 +39,7 @@ class QuestionsController < ApplicationController
   end
 
   private
-    
     def question_params
-      params.require(:question).permit(:text)
+      params.require(:question).permit(:text, :test_list_id)
     end
 end

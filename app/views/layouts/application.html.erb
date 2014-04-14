@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "jquery" %>
   <%= javascript_include_tag "jquery.validate.min" %>
+  <%= javascript_include_tag :defaults, "nested_form" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -47,9 +48,14 @@
       <strong>
         Панель пользователя
       </strong>
-      
-      <%= link_to 'Редактировать профиль', edit_user_registration_path, :method => 'get', class: :'btn btn-success' %>
-      <%= link_to 'Выйти', destroy_user_session_path, :method => 'delete', class: :'btn btn-danger' %>
+      <% if user_signed_in? %>
+      <div class="btn-group btn-group-vertical">
+        <%= link_to 'Редактировать профиль', edit_user_registration_path, :method => 'get', class: :'btn btn-success' %>
+        <%= link_to 'Выйти', destroy_user_session_path, :method => 'delete', class: :'btn btn-danger' %>
+      </div>
+      <% else %>
+        <%= render template: 'devise/sessions/new' %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,0 +1,21 @@
+%table
+  %thead
+    %tr
+      %th= Answer.human_attribute_name(:text)
+      %th= "Qestion text"
+      %th Actions
+  %tbody
+    - @answers.each do |a|
+      %tr
+        %td= a.text
+        %td= a.question.text
+        %td
+          - if can? :update, a
+            = link_to 'Edit', edit_question_answer_path(a)
+            |
+          - if can? :destroy, a
+            = link_to 'delete', question_answer_path(a), method: :delete, data: { confirm: 'sure?' }
+
+
+= link_to 'New', new_question_answer_path, class: :'btn btn-success'
+= link_to 'Назад', questions_path, class: :'btn btn-success'

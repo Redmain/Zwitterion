@@ -6,9 +6,14 @@ Zwitterion::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    #root 'welcome#index'
-   root to: "welcome#index"
-   resources :users, only: [:index]
-   resources :questions
+  root to: "welcome#index"
+  resources :users, only: [:index]
+
+  resources :questions do
+    resources :answers
+  end
+
+  resources :test_lists
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
