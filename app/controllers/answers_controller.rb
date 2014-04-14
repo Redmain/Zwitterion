@@ -1,12 +1,12 @@
 class AnswersController < ApplicationController
   load_and_authorize_resource param_method: :answer_params
+  before_action :find_question
+  def index
+    @answers = Answer.includes(:owner)
+  end
 
-  #def index
-  #  @answers = Answer.includes(:owner)
-  #end
-
-  #def show
-  #end
+  def show
+  end
 
   def new
     @answer = Answer.new
@@ -38,7 +38,10 @@ class AnswersController < ApplicationController
   end
 
   private
+    def find_question
+      @question = Question.find(params[:question_id])
+    end
     def answer_params
-      params.require(:answer).permit(:text, :test_list_id)
+      params.require(:answer).permit(:text)
     end
 end
