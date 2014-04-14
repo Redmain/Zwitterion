@@ -1,3 +1,4 @@
 = simple_form_for @question do |f|
-  = f.input :text
+  = f.input :text 
+  = f.association :test_list, :as => :select, include_blank: false
   = f.submit
