@@ -3,12 +3,14 @@
     %tr
       %th= Question.human_attribute_name(:text)
       %th= Question.human_attribute_name(:owner)
+      %th= "Test List"
       %th Actions
   %tbody
     - @questions.each do |q|
       %tr
         %td= link_to q.text, questions_path(q)
         %td= q.owner.login
+        %td= q.test_list.name
         %td
           - if can? :update, q
             = link_to 'Edit', edit_question_path(q)
