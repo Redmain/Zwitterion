@@ -25,19 +25,6 @@ class AnswersController < ApplicationController
     end
   end
 
-  #def update
-  #  if @answer.update(answer_params)
-  #    redirect_to answers_path
-  #  else
-  #    render :edit
-  #  end
-  #end
-
-  #def destroy
-  #  @answer.destroy
-  #  redirect_to answers_path
-  #end
-
   private
     def find_question
       @question = Question.find(params[:question_id])
