@@ -1,6 +1,4 @@
 class Answer < ActiveRecord::Base
-	belongs_to :question, class_name: Question
-
+	belongs_to :question, foreign_key: :question_id
 	validates :text, length: { in: 1..300 }
-	validates :answer_value, presence: true
 end
