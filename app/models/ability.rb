@@ -6,6 +6,7 @@ class Ability
     can [:update, :destroy], Question, owner: user
     can [:read, :create], TestList
     can [:update, :destroy], TestList, owner: user
+    can [:read, :create], Answer
   end
   #def initialize(user) #подсказки никогда не бывают лишними =)
     # Define abilities for the passed in user here. For example:
