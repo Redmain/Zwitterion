@@ -3,12 +3,14 @@
     %tr
       %th= Answer.human_attribute_name(:text)
       %th= "Qestion text"
+      %th= "Правильный/неправльный ответ"
       %th Actions
   %tbody
     - @answers.each do |a|
       %tr
         %td= a.text
         %td= a.question.text
+        %td= a.answer_value
         %td
           - if can? :update, a
             = link_to 'Edit', edit_question_answer_path(a)

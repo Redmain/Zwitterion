@@ -2,3 +2,5 @@
   = f.input :text 
   = f.association :test_list, :as => :select, include_blank: false
   = f.submit
+
+= link_to 'Назад', questions_path, class: :'btn btn-success'
