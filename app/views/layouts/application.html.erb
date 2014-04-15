@@ -44,19 +44,17 @@
       <%= "<p class='notice'>#{notice}</p>".html_safe if notice %>
       <%= yield %>
     </div>
+    <% if user_signed_in? %>
     <div class="span2">
       <strong>
         Панель пользователя
       </strong>
-      <% if user_signed_in? %>
       <div class="btn-group btn-group-vertical">
         <%= link_to 'Редактировать профиль', edit_user_registration_path, :method => 'get', class: :'btn btn-success' %>
         <%= link_to 'Выйти', destroy_user_session_path, :method => 'delete', class: :'btn btn-danger' %>
       </div>
-      <% else %>
-        <%= render template: 'devise/sessions/new' %>
-      <% end %>
     </div>
+    <% end %>
   </div>
 </div>
 </br>
