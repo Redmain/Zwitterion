@@ -12,9 +12,6 @@
         %td= a.question.text
         %td= a.answer_value
         %td
-          - if can? :update, a
-            = link_to 'Edit', edit_question_answer_path(@question,a), class: :'btn btn-small btn-success'
-            |
           - if can? :destroy, a
             = link_to 'delete', question_answer_path(@question,a), method: :delete, data: { confirm: 'sure?' }, class: :'btn btn-small btn-danger'
 
