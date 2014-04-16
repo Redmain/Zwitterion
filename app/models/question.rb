@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
 
 	has_many :answers, dependent: :destroy
 
-	validates :text, length: { in: 1..100 }
+	validates :text, length: { in: 1..50 }
 	validates :owner, presence: true
 	validates :test_list_id, presence: true
 end

@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   load_and_authorize_resource param_method: :answer_params
   before_action :find_question
   def index
-    @answers = Answer.includes(:question)#where(:question_id => params[:question_id])
+    @answers = Answer.includes(:question)
   end
 
   def show
@@ -23,6 +23,10 @@ class AnswersController < ApplicationController
     else
       render :new
     end
+  end
+  def destroy
+    @answer.destroy
+    redirect_to question_answers_path
   end
 
   private
