@@ -5,18 +5,20 @@
       %th= Question.human_attribute_name(:owner)
       %th= "Test List"
       %th Actions
+      %th
   %tbody
     - @questions.each do |q|
       %tr
-        %td= link_to q.text, questions_path(q)
+        %td= link_to q.text, edit_question_path(q)
         %td= q.owner.login
         %td= q.test_list.name
         %td
           - if can? :update, q
-            = link_to 'Edit', edit_question_path(q)
+            = link_to 'Edit', edit_question_path(q), class: :'btn btn-small btn-success'
             |
           - if can? :destroy, q
-            = link_to 'delete', question_path(q), method: :delete, data: { confirm: 'sure?' }
+            = link_to 'delete', question_path(q), method: :delete, data: { confirm: 'sure?' }, class: :'btn btn-small btn-danger'
+          = link_to 'Show', question_answers_path(q), class: :'btn btn-small btn-info'
         %td
           = link_to 'New answer', new_question_answer_path(q.id), class: :'btn btn-small btn-success'
 

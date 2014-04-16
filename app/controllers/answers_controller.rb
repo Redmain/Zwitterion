@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   load_and_authorize_resource param_method: :answer_params
   before_action :find_question
   def index
-    @answers = Answer.where(:question_id => params[:question_id])
+    @answers = Answer.includes(:question)#where(:question_id => params[:question_id])
   end
 
   def show

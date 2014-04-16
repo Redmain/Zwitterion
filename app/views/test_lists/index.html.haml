@@ -7,14 +7,14 @@
   %tbody
     - @test_lists.each do |t|
       %tr
-        %td= link_to t.name, test_lists_path(t)
+        %td= link_to t.name, edit_test_list_path(t)
         %td= t.owner.login
         %td
           - if can? :update, t
-            = link_to 'Edit', edit_test_list_path(t)
+            = link_to 'Edit', edit_test_list_path(t), class: :'btn btn-small btn-success'
             |
           - if can? :destroy, t
-            = link_to 'delete', test_list_path(t), method: :delete, data: { confirm: 'sure?' }
+            = link_to 'delete', test_list_path(t), method: :delete, data: { confirm: 'sure?' }, class: :'btn btn-small btn-danger'
 
 = link_to 'New', new_test_list_path, class: :'btn btn-success'
 = link_to 'Назад', questions_path, class: :'btn btn-success'
