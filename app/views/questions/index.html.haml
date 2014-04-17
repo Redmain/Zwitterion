@@ -9,7 +9,7 @@
   %tbody
     - @questions.each do |q|
       %tr
-        %td= link_to q.text, edit_question_path(q)
+        %td= q.text
         %td= q.owner.login
         %td= q.test_list.name
         %td

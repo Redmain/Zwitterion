@@ -7,7 +7,7 @@
   %tbody
     - @test_lists.each do |t|
       %tr
-        %td= link_to t.name, edit_test_list_path(t)
+        %td= t.name
         %td= t.owner.login
         %td
           - if can? :update, t
